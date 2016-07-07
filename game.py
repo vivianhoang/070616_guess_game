@@ -19,19 +19,21 @@ while True:
         #guessed_num = int(guessed_num)
     #except ValueError:
      #   print "That was not a valid number. I shall turn you into a newt! But you can get better. Please enter a number between 1 and 100: "
-        if guessed_num < 1 or guessed_num > 100:
-            count = count + 1
-            print "Fail! Do it again and I shall taunt you a second time!! You didn't guess a number between 1 and 100. Try again."
-        elif guessed_num > random_number:
-            count = count + 1
-            print "Your guess is too high, try again."
-        elif guessed_num < random_number:
-            count = count + 1
-            print "Your guess is too low, try again."
-        else:
-            count = count + 1
-            print "Congratuations, {0} you found my number in {1} tries.".format(name, count)
-            break
     except ValueError:
         print "That was not a valid number. I shall turn you into a newt! But you can get better. Please enter a number between 1 and 100: "
         count = count + 1
+        continue        
+    if guessed_num < 1 or guessed_num > 100:
+        count = count + 1
+        print "Fail! Do it again and I shall taunt you a second time!! You didn't guess a number between 1 and 100. Try again."
+    elif guessed_num > random_number:
+        count = count + 1
+        print "Your guess is too high, try again."
+    elif guessed_num < random_number:
+        count = count + 1
+        print "Your guess is too low, try again."
+    else:
+        count = count + 1
+        print "Congratuations, {0} you found my number in {1} tries.".format(name, count)
+        break
+
