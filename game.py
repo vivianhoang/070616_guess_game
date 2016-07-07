@@ -12,7 +12,10 @@ while True:
     guessed_num = raw_input("Please guess a number between 1 and 100: ")
     guessed_num = int(guessed_num)
     #print guessed_num
-    if guessed_num > random_number:
+    if guessed_num < 1 or guessed_num > 100:
+        count = count + 1
+        print "Fail! Do it again and I shall taunt you a second time!! You didn't guess a number between 1 and 100. Try again."
+    elif guessed_num > random_number:
         count = count + 1
         print "Your guess is too high, try again."
     elif guessed_num < random_number:
